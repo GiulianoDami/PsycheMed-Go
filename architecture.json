@@ -1,0 +1,32 @@
+{
+    "language": "Go",
+    "dependency_file": "go.mod",
+    "dependencies": [],
+    "files": [
+        {
+            "path": "models/compound.go",
+            "description": "Defines the Compound struct and related types for storing molecular data",
+            "exports": ["type Compound struct", "type ReceptorBinding struct"]
+        },
+        {
+            "path": "analysis/binding.go",
+            "description": "Contains functions for calculating binding affinities and therapeutic scores",
+            "exports": ["func AnalyzeCompound(Compound) AnalysisResult", "func CalculateTherapeuticScore(Compound) float64"]
+        },
+        {
+            "path": "analysis/sideeffect.go",
+            "description": "Predicts hallucinogenic potential based on receptor binding data",
+            "exports": ["func PredictHallucinationRisk(Compound) float64", "func GenerateRecommendations(AnalysisResult) []string"]
+        },
+        {
+            "path": "visualization/plot.go",
+            "description": "Generates visualizations of receptor interaction patterns",
+            "exports": ["func PlotReceptorInteractions(Compound) error"]
+        },
+        {
+            "path": "main.go",
+            "description": "Main entry point demonstrating usage of the library",
+            "imports_from_other_files": ["models", "analysis", "visualization"]
+        }
+    ]
+}
